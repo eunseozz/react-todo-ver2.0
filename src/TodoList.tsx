@@ -1,0 +1,70 @@
+import React, { useState } from "react";
+import TodoGroup from "./TodoGroup";
+
+
+const TodoList = () => {
+    const [tasks, setTask] = useState([
+        {
+            date: "2023.03.07",
+            todo:
+            [
+                {
+                    id: 1,
+                    title: '밥먹기',
+                },
+                {
+                    id: 2,
+                    title: '운동하기',
+                }
+            ]
+        },
+        {
+            date: "2023.03.06",
+            todo:
+            [
+                {
+                    id: 3,
+                    title: '친구만나기',
+                }
+            ]
+        },
+        {
+            date: "2023.03.05",
+            todo:
+            [
+                {
+                    id: 4,
+                    title: '공부하기',
+                },
+                {
+                    id: 5,
+                    title: '식단짜기',
+                },
+                {
+                    id: 6,
+                    title: '여행가기',
+                }
+            ]
+        },
+
+    ]);
+
+    // const handleClickDeleteButton = (id: number) => {
+    //     setTask(tasks.filter(task => task.todo.filter(item => item.id !== id)));
+    // }
+    
+    return (
+        <ul className="todo-wrap">
+            {tasks.map(task =>
+                <TodoGroup
+                    tasks={tasks}
+                    //onClickUpdateButton={handleClickUpdateButton}
+                    //onClickDeleteButton={handleClickDeleteButton}
+                />
+            )}
+
+        </ul>
+    );
+}
+
+export default TodoList;
