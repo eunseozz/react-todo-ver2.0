@@ -14,11 +14,11 @@ const TodoItem = ({
     title
 }: TodoItemProps) => {
     return (
-        <li>
-           <span>{title}</span> 
+        <>
+           <li>{title}</li> 
            {/* <button type="button" onClick={(id) => onClickUpdateButton}>수정</button> */}
            {/* <button type="button" onClick={(id) => onClickDeleteButton}>삭제</button> */}
-        </li>
+        </>
     );
 }
 

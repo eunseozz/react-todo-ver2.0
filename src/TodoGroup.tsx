@@ -1,15 +1,12 @@
 import React from "react";
+import TodoItem from "./TodoItem";
 
 interface TodoGroupProps {
     //onClickUpdateButton(id: number): void;
     //onClickDeleteButton(id: number): void;
-    tasks: Array<dateObj>;
-};
-
-interface dateObj {
     date: string,
     todo: Array<ItemObj>;
-}
+};
 
 interface ItemObj {
     id: number;
@@ -19,16 +16,20 @@ interface ItemObj {
 const TodoGroup = ({
     //onClickUpdateButton,
     //onClickDeleteButton,
-    tasks,
+    date,
+    todo
 }: TodoGroupProps) => {
     return (
         <li>
-            {tasks.map(task => 
-                <p>{task.date}</p>
-                // {task.map(item => 
-                //     <TodoItem />
-                // )}
-            )}
+            <p><span>{date}</span></p>
+            <ul>
+                {todo.map(item => 
+                    <TodoItem 
+                        id={item.id}
+                        title={item.title}
+                    />
+                )}
+            </ul>
         </li>
     );
 }

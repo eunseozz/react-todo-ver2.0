@@ -57,12 +57,12 @@ const TodoList = () => {
         <ul className="todo-wrap">
             {tasks.map(task =>
                 <TodoGroup
-                    tasks={tasks}
+                    date={task.date}
+                    todo={task.todo}
                     //onClickUpdateButton={handleClickUpdateButton}
                     //onClickDeleteButton={handleClickDeleteButton}
                 />
             )}
-
         </ul>
     );
 }
