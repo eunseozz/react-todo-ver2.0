@@ -4,21 +4,21 @@ import SampleModal from "./SampleModal";
 import TodoList from "./TodoList";
 
 const Todo = () => {
-    const [modalOpened, setModalOpened] = useState(false);
+    const [isModalOpen, isOpen] = useState(false);
     
     const handleOpen = () => {
-        setModalOpened(true);
+        isOpen(true);
     };
     
     const handleClose = () => {
-        setModalOpened(false);
+        isOpen(false);
     }; 
 
     return (
         <>
             <button onClick={handleOpen}>Open Modal</button>
             <TodoList />
-            {modalOpened && (
+            {isModalOpen && (
                 <PortalModal>
                     <SampleModal closePop={handleClose}/>
                 </PortalModal>
