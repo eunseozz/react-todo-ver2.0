@@ -8,10 +8,11 @@ const SampleModal = ({
   closePop
 }: SampleModalProps) => {
   return (
-    <div>
-      <h3>Sample</h3>
-      <p>Sample Modal</p>
-      <button type="button" onClick={closePop}>닫기</button>
+    <div className="popup-wrap">
+        <button type="button" className="popup-close" onClick={closePop}>X</button>
+        <h3 className="popup-title">추가하기</h3>
+        <input type="text" className="popup-input" placeholder="내용을 입력해주세요." />
+        <button type="button" className="popup-btn">저장</button>
     </div>
   );
 };
