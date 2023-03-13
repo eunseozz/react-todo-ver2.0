@@ -50,7 +50,8 @@ const TodoList = () => {
     ]);
 
     const handleClickDeleteButton = (id: number) => {
-        setTask(tasks.map(task => ({'date': task.date, 'todo': task.todo.filter(item => item.id !== id)})));
+        const newArray = tasks.map(task => ({'date': task.date, 'todo': task.todo.filter(item => item.id !== id)})).filter(item => (item.todo.length !== 0));
+        setTask(newArray);
     }
     
     return (
