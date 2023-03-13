@@ -49,18 +49,19 @@ const TodoList = () => {
 
     ]);
 
-    // const handleClickDeleteButton = (id: number) => {
-    //     setTask(tasks.filter(task => task.todo.filter(item => item.id !== id)));
-    // }
+    const handleClickDeleteButton = (id: number) => {
+        setTask(tasks.map(task => ({'date': task.date, 'todo': task.todo.filter(item => item.id !== id)})));
+    }
     
     return (
         <ul className="todo-wrap">
             {tasks.map(task =>
                 <TodoGroup
+                    key={task.date}
                     date={task.date}
                     todo={task.todo}
                     //onClickUpdateButton={handleClickUpdateButton}
-                    //onClickDeleteButton={handleClickDeleteButton}
+                    onClickDeleteButton={handleClickDeleteButton}
                 />
             )}
         </ul>

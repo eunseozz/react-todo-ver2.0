@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 interface TodoGroupProps {
     //onClickUpdateButton(id: number): void;
-    //onClickDeleteButton(id: number): void;
+    onClickDeleteButton(id: number): void;
     date: string,
     todo: Array<ItemObj>;
 };
@@ -15,7 +15,7 @@ interface ItemObj {
 
 const TodoGroup = ({
     //onClickUpdateButton,
-    //onClickDeleteButton,
+    onClickDeleteButton,
     date,
     todo
 }: TodoGroupProps) => {
@@ -24,9 +24,11 @@ const TodoGroup = ({
             <p><span>{date}</span></p>
             <ul>
                 {todo.map(item => 
-                    <TodoItem 
+                    <TodoItem
+                        key={item.id}
                         id={item.id}
                         title={item.title}
+                        onClickDeleteButton={onClickDeleteButton}
                     />
                 )}
             </ul>
