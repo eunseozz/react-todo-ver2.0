@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalDimd from "./ModalDimd";
+
 import PortalModal from "./PortalModal";
 import SampleModal from "./SampleModal";
 import TodoList from "./TodoList";
@@ -24,7 +24,6 @@ const Todo = () => {
             {modalOpened && (
                 <PortalModal>
                     <SampleModal closePop={handleClose}/>
-                    <ModalDimd closePop={handleClose} />
                 </PortalModal>
             )}            
         </>
