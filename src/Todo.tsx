@@ -18,8 +18,6 @@ const Todo = () => {
         <>
             <button onClick={handleOpen}>Open Modal</button>
             <TodoList />
-            {/* <TodoAddModal /> */}
-            {/* <TodoUpdateModal /> */}
             {modalOpened && (
                 <PortalModal>
                     <SampleModal closePop={handleClose}/>
