@@ -1,13 +1,13 @@
 import React from "react";
 import ModalDimd from "./ModalDimd";
 
-interface SampleModalProps {
+interface Props {
   closePop: any;
 };
 
 const SampleModal = ({
   closePop
-}: SampleModalProps) => {
+}: Props) => {
   return (
     <>
       <div className="popup-wrap">
