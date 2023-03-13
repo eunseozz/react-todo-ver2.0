@@ -1,5 +1,4 @@
 @import './reset.css';
-
 .inner{
     padding: 50px 0 50px 0;
     max-width: 768px;
@@ -36,4 +35,61 @@
 
 .todo-wrap > li ul{
     margin-top: 10px;
+}
+
+#modal-root .popup-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 9;
+}
+
+#modal-root .popup-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 15px;
+}
+
+#modal-root .popup-title{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#modal-root .popup-input{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#modal-root .popup-btn{
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 12px;
+    background-color: #9dd84b;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#modal-root .popup-dimd{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: .5;
+    z-index: 8;
 }
