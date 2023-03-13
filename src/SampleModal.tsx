@@ -1,12 +1,12 @@
 import React from "react";
 
-interface SampleModalProps {
+interface Props {
   closePop: any;
 };
 
 const SampleModal = ({
   closePop
-}: SampleModalProps) => {
+}: Props) => {
   return (
     <div>
       <h3>Sample</h3>
