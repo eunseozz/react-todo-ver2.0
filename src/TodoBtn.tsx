@@ -4,9 +4,10 @@ import SampleModal from './SampleModal'
 interface TodoBtnProps {
   saveData(): void
   title: string
+  value?: string
 }
 
-const TodoBtn = ({ saveData, title }: TodoBtnProps) => {
+const TodoBtn = ({ saveData, title, value = '' }: TodoBtnProps) => {
   const [isModalOpen, isOpen] = useState(false)
 
   const handleOpen = () => {
@@ -21,7 +22,12 @@ const TodoBtn = ({ saveData, title }: TodoBtnProps) => {
     <>
       <button onClick={handleOpen}>{title}</button>
       {isModalOpen && (
-        <SampleModal saveData={saveData} title={title} closePop={handleClose} />
+        <SampleModal
+          saveData={saveData}
+          title={title}
+          value={value}
+          closePop={handleClose}
+        />
       )}
     </>
   )

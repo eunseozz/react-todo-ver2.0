@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ModalDimd from './ModalDimd'
 import PortalModal from './PortalModal'
 
@@ -6,9 +6,17 @@ interface Props {
   saveData(): void
   closePop(): void
   title: string
+  value?: string
 }
 
-const SampleModal = ({ saveData, closePop, title }: Props) => {
+const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
+  const [inputText, setInputText] = useState(value)
+
+  // 입력값 변경
+  const inputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value)
+  }
+
   return (
     <PortalModal>
       <div className="popup-wrap">
@@ -21,6 +29,8 @@ const SampleModal = ({ saveData, closePop, title }: Props) => {
             type="text"
             className="popup-input"
             placeholder="내용을 입력해주세요."
+            value={inputText}
+            onChange={(e) => inputTextChange(e)}
           />
           <button
             type="button"
