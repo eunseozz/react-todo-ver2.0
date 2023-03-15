@@ -20,7 +20,7 @@ const TodoItem = ({
     <>
       <li>
         {title}
-        <TodoBtn saveData={handleSaveData} title="수정" />
+        <TodoBtn saveData={handleSaveData} title="수정" value={title} />
         <button type="button" onClick={() => onClickDeleteButton(id)}>
           삭제
         </button>
