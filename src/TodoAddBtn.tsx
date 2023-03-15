@@ -18,7 +18,7 @@ const TodoAddBtn = () => {
     <>
       <button onClick={handleOpen}>추가</button>
       {isModalOpen && (
-        <SampleModal saveData={saveData} title="추가" closePop={handleClose} />
+        <SampleModal saveData={saveData} title="추가" onClose={handleClose} />
       )}
     </>
   )

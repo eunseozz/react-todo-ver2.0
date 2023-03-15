@@ -4,15 +4,15 @@ import PortalModal from './PortalModal'
 
 interface Props {
   saveData(): void
-  closePop(): void
+  onClose(): void
   title: string
 }
 
-const SampleModal = ({ saveData, closePop, title }: Props) => {
+const SampleModal = ({ saveData, onClose, title }: Props) => {
   return (
     <PortalModal>
       <div className="popup-wrap">
-        <button type="button" className="popup-close" onClick={closePop}>
+        <button type="button" className="popup-close" onClick={onClose}>
           X
         </button>
         <h3 className="popup-title">{title}하기</h3>
@@ -31,7 +31,7 @@ const SampleModal = ({ saveData, closePop, title }: Props) => {
           </button>
         </form>
       </div>
-      <ModalDimd closePop={closePop} />
+      <ModalDimd onClose={onClose} />
     </PortalModal>
   )
 }
