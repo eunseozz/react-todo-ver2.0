@@ -15,11 +15,11 @@ const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
   const inputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
   }
-
+  
   return (
     <PortalModal>
       <div className="popup-wrap">
-        <button type="button" className="popup-close" onClick={closePop}>
+        <button type="button" className="popup-close" onClick={onClose}>
           X
         </button>
         <h3 className="popup-title">{title}하기</h3>
@@ -40,7 +40,7 @@ const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
           </button>
         </form>
       </div>
-      <ModalDimd closePop={closePop} />
+      <ModalDimd onClose={onClose} />
     </PortalModal>
   )
 }

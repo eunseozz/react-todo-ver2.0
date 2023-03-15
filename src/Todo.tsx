@@ -7,7 +7,7 @@ const Todo = () => {
 
   return (
     <>
-      <TodoBtn saveData={handleSaveData} title="추가" />
+      <TodoBtn onSubmit={handleSaveData} title="추가" />
       <TodoList />
     </>
   )

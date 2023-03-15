@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SampleModal from './SampleModal'
 
 interface TodoBtnProps {
-  saveData(): void
+  onSubmit(): void
   title: string
   value?: string
 }
@@ -23,10 +23,10 @@ const TodoBtn = ({ saveData, title, value = '' }: TodoBtnProps) => {
       <button onClick={handleOpen}>{title}</button>
       {isModalOpen && (
         <SampleModal
-          saveData={saveData}
+          onSubmit={onSubmit}
           title={title}
           value={value}
-          closePop={handleClose}
+          onClose={handleClose}
         />
       )}
     </>
