@@ -12,7 +12,6 @@ interface Props {
 const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
   const [inputText, setInputText] = useState(value)
 
-  // 입력값 변경
   const inputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
   }
