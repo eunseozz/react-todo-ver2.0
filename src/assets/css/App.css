@@ -1,8 +1,13 @@
 @import './reset.css';
 .inner{
-    padding: 50px 0 50px 0;
+    padding: 50px 20px 50px 20px;
     max-width: 768px;
     margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.todo-wrap{
+    margin-top: 50px;
 }
 
 .todo-wrap > li + li{
@@ -16,9 +21,10 @@
 
 .todo-wrap > li > p > span{
     display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     background-color: #fff;
+    font-weight: 500;
 }
 
 .todo-wrap > li > p:after{
@@ -34,7 +40,57 @@
 }
 
 .todo-wrap > li ul{
+    margin-top: 20px;
+}
+
+.todo-wrap > li ul > li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-wrap > li ul > li + li{
     margin-top: 10px;
+}
+
+.todo-wrap > li ul > li .btn-wrap button + button{
+    margin-left: 10px;
+}
+
+.btn-type-01{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+
+.btn-type-01.gray{
+    background-color: #ddd;
+    color: #fff;
+}
+
+.btn-type-01.green{
+    background-color: #9dd84b;
+    color: #fff;
+}
+
+.btn-type-02{
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.btn-type-02.yellow{
+    background-color: #ffda98;
+    color: #fff;
+}
+
+.btn-type-02.gray{
+    border: 1px solid #ccc;
+    color: #aaa;
 }
 
 #modal-root .popup-wrap{
@@ -51,10 +107,14 @@
 }
 
 #modal-root .popup-close{
+    text-indent: -9999px;
     position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 15px;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/ico_close.svg) no-repeat center;
+    background-size: 100%;
 }
 
 #modal-root .popup-title{
@@ -72,15 +132,9 @@
     padding-bottom: 10px;
 }
 
-#modal-root .popup-btn{
+#modal-root .btn-type-01{
     margin-top: 20px;
-    display: block;
-    width: 100%;
-    font-size: 16px;
-    padding: 10px 12px;
-    background-color: #9dd84b;
-    color: #fff;
-    border-radius: 5px;
+
 }
 
 #modal-root .popup-dimd{

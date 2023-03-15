@@ -33,7 +33,7 @@ const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
           />
           <button
             type="button"
-            className="popup-btn"
+            className="btn-type-01"
             onSubmit={() => saveData()}
           >
             저장
