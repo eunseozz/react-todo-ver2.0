@@ -3,12 +3,12 @@ import ModalDimd from './ModalDimd'
 import PortalModal from './PortalModal'
 
 interface Props {
-  saveData(): void
+  onSubmit(): void
   onClose(): void
   title: string
 }
 
-const SampleModal = ({ saveData, onClose, title }: Props) => {
+const SampleModal = ({ onSubmit, onClose, title }: Props) => {
   return (
     <PortalModal>
       <div className="popup-wrap">
@@ -25,7 +25,7 @@ const SampleModal = ({ saveData, onClose, title }: Props) => {
           <button
             type="button"
             className="popup-btn"
-            onSubmit={() => saveData()}
+            onSubmit={() => onSubmit()}
           >
             저장
           </button>

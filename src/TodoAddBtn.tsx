@@ -12,13 +12,13 @@ const TodoAddBtn = () => {
     isOpen(false)
   }
 
-  const saveData = () => {}
+  const onSubmit = () => {}
 
   return (
     <>
       <button onClick={handleOpen}>추가</button>
       {isModalOpen && (
-        <SampleModal saveData={saveData} title="추가" onClose={handleClose} />
+        <SampleModal onSubmit={onSubmit} title="추가" onClose={handleClose} />
       )}
     </>
   )
