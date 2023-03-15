@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-
 import TodoAddBtn from './TodoAddBtn'
 import TodoList from './TodoList'
 
