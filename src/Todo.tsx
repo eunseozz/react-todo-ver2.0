@@ -8,7 +8,7 @@ const Todo = () => {
   return (
     <>
       <TodoBtn
-        saveData={handleSaveData}
+        onSubmit={handleSaveData}
         title="할 일 추가"
         btnType="추가"
         btnStyle="btn-type-01 gray"

@@ -7,7 +7,6 @@ interface TodoItemProps {
   title: string
 }
 
-
 const TodoItem = ({ onClickDeleteButton, id, title }: TodoItemProps) => {
   const handleOnSubmit = () => {}
 
@@ -17,7 +16,7 @@ const TodoItem = ({ onClickDeleteButton, id, title }: TodoItemProps) => {
         <p>{title}</p>
         <div className="btn-wrap">
           <TodoBtn
-            onSubmit={handleSaveData}
+            onSubmit={handleOnSubmit}
             title="수정"
             value={title}
             btnType="수정"

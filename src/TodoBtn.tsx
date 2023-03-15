@@ -31,7 +31,7 @@ const TodoBtn = ({
   return (
     <>
       {btnType === '삭제' ? (
-        <button type="button" className={btnStyle} onClick={() => saveData(id)}>
+        <button type="button" className={btnStyle} onClick={() => onSubmit(id)}>
           {title}
         </button>
       ) : (

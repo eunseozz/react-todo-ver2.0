@@ -3,26 +3,26 @@ import ModalDimd from './ModalDimd'
 import PortalModal from './PortalModal'
 
 interface Props {
-  saveData(): void
-  closePop(): void
+  onSubmit(): void
+  onClose(): void
   title: string
   value?: string
 }
 
-const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
+const SampleModal = ({ onSubmit, onClose, title, value = '' }: Props) => {
   const [inputText, setInputText] = useState(value)
 
   const inputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
   }
-  
+
   return (
     <PortalModal>
       <div className="popup-wrap">
         <button type="button" className="popup-close" onClick={onClose}>
           X
         </button>
-        <h3 className="popup-title">{title}하기</h3>
+        <h3 className="popup-title">{title}</h3>
         <form action="post">
           <input
             type="text"
@@ -34,7 +34,7 @@ const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
           <button
             type="button"
             className="btn-type-01"
-            onSubmit={() => saveData()}
+            onSubmit={() => onSubmit()}
           >
             저장
           </button>
