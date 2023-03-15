@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
+import PortalModal from './PortalModal'
 import SampleModal from './SampleModal'
 
 const TodoAddBtn = () => {
-  const [isModalOpen, isOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleOpen = () => {
-    isOpen(true)
+    setIsModalOpen(true)
   }
 
   const handleClose = () => {
-    isOpen(false)
+    setIsModalOpen(false)
   }
-
-  const onSubmit = () => {}
-
   return (
     <>
       <button onClick={handleOpen}>추가</button>
