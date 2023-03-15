@@ -23,7 +23,7 @@ const SampleModal = ({ onSubmit, onClose, title, value = '' }: Props) => {
           X
         </button>
         <h3 className="popup-title">{title}</h3>
-        <form action="post">
+        {/* <form action="post">
           <input
             type="text"
             className="popup-input"
@@ -38,7 +38,8 @@ const SampleModal = ({ onSubmit, onClose, title, value = '' }: Props) => {
           >
             저장
           </button>
-        </form>
+        </form> */}
+        {children}
       </div>
       <ModalDimd onClose={onClose} />
     </PortalModal>

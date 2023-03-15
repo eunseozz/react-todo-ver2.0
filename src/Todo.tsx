@@ -1,19 +1,18 @@
 import React from 'react'
-import TodoBtn from './TodoBtn'
 import TodoList from './TodoList'
+import Button from './Button'
+import SampleModal from './SampleModal'
 
 const Todo = () => {
-  const handleSaveData = () => {}
+  const [isOpen, setIsOpen] = React.useState(false)
 
   return (
     <>
-      <TodoBtn
-        onSubmit={handleSaveData}
-        title="할 일 추가"
-        btnType="추가"
-        btnStyle="btn-type-01 gray"
-      />
+      <Button variants="add" onClick={() => setIsOpen(true)}>
+        할 일 추가
+      </Button>
       <TodoList />
+      {isOpen && <SampleModal />}
     </>
   )
 }

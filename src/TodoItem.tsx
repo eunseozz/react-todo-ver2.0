@@ -1,5 +1,7 @@
 import React from 'react'
 import TodoBtn from './TodoBtn'
+import Button from './Button'
+import SampleModal from './SampleModal'
 
 interface TodoItemProps {
   onClickDeleteButton(id: number): void
@@ -10,27 +12,28 @@ interface TodoItemProps {
 const TodoItem = ({ onClickDeleteButton, id, title }: TodoItemProps) => {
   const handleOnSubmit = () => {}
 
+  const [isUpdateModalOpen, setIsUpdateModalOpen] = React.useState(false)
+
   return (
     <>
       <li>
         <p>{title}</p>
         <div className="btn-wrap">
-          <TodoBtn
-            onSubmit={handleOnSubmit}
-            title="수정"
-            value={title}
-            btnType="수정"
-            btnStyle="btn-type-02 yellow"
-          />
-          <TodoBtn
-            onSubmit={onClickDeleteButton}
-            id={id}
-            title="삭제"
-            btnType="삭제"
-            btnStyle="btn-type-02 gray"
-          />
+          <Button variants="update" onClick={() => setIsUpdateModalOpen(true)}>
+            수정
+          </Button>
+          <Button variants="delete" onClick={() => {}}>
+            삭제
+          </Button>
         </div>
       </li>
+      {isUpdateModalOpen && (
+        <SampleModal>
+          <form>
+            <input />
+          </form>
+        </SampleModal>
+      )}
     </>
   )
 }
