@@ -1,4 +1,5 @@
 import React from 'react'
+import TodoBtn from './TodoBtn'
 
 interface TodoItemProps {
   //onClickUpdateButton(id: number): void;
@@ -13,11 +14,13 @@ const TodoItem = ({
   id,
   title,
 }: TodoItemProps) => {
+  const handleSaveData = () => {}
+
   return (
     <>
       <li>
         {title}
-        {/* <button type="button" onClick={(id) => onClickUpdateButton}>수정</button> */}
+        <TodoBtn saveData={handleSaveData} title="수정" />
         <button type="button" onClick={() => onClickDeleteButton(id)}>
           삭제
         </button>

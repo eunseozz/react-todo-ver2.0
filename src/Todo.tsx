@@ -1,10 +1,13 @@
-import TodoAddBtn from './TodoAddBtn'
+import React from 'react'
+import TodoBtn from './TodoBtn'
 import TodoList from './TodoList'
 
 const Todo = () => {
+  const handleSaveData = () => {}
+
   return (
     <>
-      <TodoAddBtn />
+      <TodoBtn onSubmit={handleSaveData} title="추가" />
       <TodoList />
     </>
   )
