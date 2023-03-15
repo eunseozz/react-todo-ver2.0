@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-
-import PortalModal from './PortalModal'
 import SampleModal from './SampleModal'
 
 const TodoAddBtn = () => {
@@ -17,11 +15,7 @@ const TodoAddBtn = () => {
   return (
     <>
       <button onClick={handleOpen}>추가</button>
-      {isModalOpen && (
-        <PortalModal>
-          <SampleModal closePop={handleClose} />
-        </PortalModal>
-      )}    
+      {isModalOpen && <SampleModal closePop={handleClose} />}
     </>
   )
 }

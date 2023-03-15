@@ -1,5 +1,6 @@
 import React from 'react'
 import ModalDimd from './ModalDimd'
+import PortalModal from './PortalModal'
 
 interface Props {
   closePop: any
@@ -7,7 +8,7 @@ interface Props {
 
 const SampleModal = ({ closePop }: Props) => {
   return (
-    <>
+    <PortalModal>
       <div className="popup-wrap">
         <button type="button" className="popup-close" onClick={closePop}>
           X
@@ -23,7 +24,7 @@ const SampleModal = ({ closePop }: Props) => {
         </button>
       </div>
       <ModalDimd closePop={closePop} />
-    </>
+    </PortalModal>
   )
 }
 
