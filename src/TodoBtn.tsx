@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SampleModal from './SampleModal'
 
 interface TodoBtnProps {
-  saveData(id?: number): void
+  onSubmit(id?: number): void
   btnType: '추가' | '수정' | '삭제'
   title: string
   value?: string
@@ -11,7 +11,7 @@ interface TodoBtnProps {
 }
 
 const TodoBtn = ({
-  saveData,
+  onSubmit,
   btnType,
   title,
   value = '',
@@ -42,10 +42,10 @@ const TodoBtn = ({
 
       {isModalOpen && (
         <SampleModal
-          saveData={saveData}
+          onSubmit={onSubmit}
           title={title}
           value={value}
-          closePop={handleClose}
+          onClose={handleClose}
         />
       )}
     </>

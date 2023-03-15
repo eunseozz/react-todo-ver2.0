@@ -12,18 +12,17 @@ interface Props {
 const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
   const [inputText, setInputText] = useState(value)
 
-  // 입력값 변경
   const inputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
   }
-
+  
   return (
     <PortalModal>
       <div className="popup-wrap">
-        <button type="button" className="popup-close" onClick={closePop}>
-          닫기
+        <button type="button" className="popup-close" onClick={onClose}>
+          X
         </button>
-        <h3 className="popup-title">{title}</h3>
+        <h3 className="popup-title">{title}하기</h3>
         <form action="post">
           <input
             type="text"
@@ -41,7 +40,7 @@ const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
           </button>
         </form>
       </div>
-      <ModalDimd closePop={closePop} />
+      <ModalDimd onClose={onClose} />
     </PortalModal>
   )
 }

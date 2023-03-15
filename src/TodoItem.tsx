@@ -7,8 +7,9 @@ interface TodoItemProps {
   title: string
 }
 
+
 const TodoItem = ({ onClickDeleteButton, id, title }: TodoItemProps) => {
-  const handleSaveData = () => {}
+  const handleOnSubmit = () => {}
 
   return (
     <>
@@ -16,14 +17,14 @@ const TodoItem = ({ onClickDeleteButton, id, title }: TodoItemProps) => {
         <p>{title}</p>
         <div className="btn-wrap">
           <TodoBtn
-            saveData={handleSaveData}
+            onSubmit={handleSaveData}
             title="수정"
             value={title}
             btnType="수정"
             btnStyle="btn-type-02 yellow"
           />
           <TodoBtn
-            saveData={onClickDeleteButton}
+            onSubmit={onClickDeleteButton}
             id={id}
             title="삭제"
             btnType="삭제"
