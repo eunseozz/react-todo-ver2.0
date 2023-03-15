@@ -10,7 +10,7 @@ const Todo = () => {
       <TodoBtn
         saveData={handleSaveData}
         title="할 일 추가"
-        btnType="add"
+        btnType="추가"
         btnStyle="btn-type-01 gray"
       />
       <TodoList />

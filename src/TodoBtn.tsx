@@ -3,7 +3,7 @@ import SampleModal from './SampleModal'
 
 interface TodoBtnProps {
   saveData(id?: number): void
-  btnType: string
+  btnType: '추가' | '수정' | '삭제'
   title: string
   value?: string
   id?: number
