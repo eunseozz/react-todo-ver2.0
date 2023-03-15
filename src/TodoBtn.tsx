@@ -2,12 +2,20 @@ import React, { useState } from 'react'
 import SampleModal from './SampleModal'
 
 interface TodoBtnProps {
-  saveData(): void
+  saveData(id?: number): void
+  btnType: string
   title: string
   value?: string
+  id?: number
 }
 
-const TodoBtn = ({ saveData, title, value = '' }: TodoBtnProps) => {
+const TodoBtn = ({
+  saveData,
+  btnType,
+  title,
+  value = '',
+  id,
+}: TodoBtnProps) => {
   const [isModalOpen, isOpen] = useState(false)
 
   const handleOpen = () => {
@@ -20,7 +28,16 @@ const TodoBtn = ({ saveData, title, value = '' }: TodoBtnProps) => {
 
   return (
     <>
-      <button onClick={handleOpen}>{title}</button>
+      {btnType === '삭제' ? (
+        <button type="button" onClick={() => saveData(id)}>
+          {title}
+        </button>
+      ) : (
+        <button type="button" onClick={handleOpen}>
+          {title}
+        </button>
+      )}
+
       {isModalOpen && (
         <SampleModal
           saveData={saveData}

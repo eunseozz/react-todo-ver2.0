@@ -21,9 +21,9 @@ const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
     <PortalModal>
       <div className="popup-wrap">
         <button type="button" className="popup-close" onClick={closePop}>
-          X
+          닫기
         </button>
-        <h3 className="popup-title">{title}하기</h3>
+        <h3 className="popup-title">{title}</h3>
         <form action="post">
           <input
             type="text"
@@ -34,7 +34,7 @@ const SampleModal = ({ saveData, closePop, title, value = '' }: Props) => {
           />
           <button
             type="button"
-            className="popup-btn"
+            className="btn-type-01"
             onSubmit={() => saveData()}
           >
             저장
