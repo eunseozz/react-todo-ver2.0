@@ -3,16 +3,16 @@ import ModalDimd from './ModalDimd'
 import PortalModal from './PortalModal'
 
 interface Props {
-  saveData(): void
-  closePop(): void
+  onSubmit(): void
+  onClose(): void
   title: string
 }
 
-const SampleModal = ({ saveData, closePop, title }: Props) => {
+const SampleModal = ({ onSubmit, onClose, title }: Props) => {
   return (
     <PortalModal>
       <div className="popup-wrap">
-        <button type="button" className="popup-close" onClick={closePop}>
+        <button type="button" className="popup-close" onClick={onClose}>
           X
         </button>
         <h3 className="popup-title">{title}하기</h3>
@@ -23,15 +23,15 @@ const SampleModal = ({ saveData, closePop, title }: Props) => {
             placeholder="내용을 입력해주세요."
           />
           <button
-            type="submit"
+            type="button"
             className="popup-btn"
-            onSubmit={() => saveData()}
+            onSubmit={() => onSubmit()}
           >
             저장
           </button>
         </form>
       </div>
-      <ModalDimd closePop={closePop} />
+      <ModalDimd onClose={onClose} />
     </PortalModal>
   )
 }

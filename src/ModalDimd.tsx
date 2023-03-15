@@ -1,11 +1,11 @@
 import React from 'react'
 
 interface ModalDimdProps {
-  closePop: any
+  onClose: any
 }
 
-const SampleModal = ({ closePop }: ModalDimdProps) => {
-  return <div className="popup-dimd" onClick={closePop}></div>
+const SampleModal = ({ onClose }: ModalDimdProps) => {
+  return <div className="popup-dimd" onClick={onClose}></div>
 }
 
 export default SampleModal
