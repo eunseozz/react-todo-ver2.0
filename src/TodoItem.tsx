@@ -20,12 +20,14 @@ const TodoItem = ({ onClickDeleteButton, id, title }: TodoItemProps) => {
             title="수정"
             value={title}
             btnType="수정"
+            btnStyle="btn-type-02 yellow"
           />
           <TodoBtn
             saveData={onClickDeleteButton}
             id={id}
             title="삭제"
             btnType="삭제"
+            btnStyle="btn-type-02 gray"
           />
         </div>
       </li>

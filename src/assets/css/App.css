@@ -6,17 +6,6 @@
     box-sizing: border-box;
 }
 
-.inner > button{
-    display: block;
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #ddd;
-    color: #fff;
-}
-
 .todo-wrap{
     margin-top: 50px;
 }
@@ -64,24 +53,6 @@
     margin-top: 10px;
 }
 
-.todo-wrap > li ul > li .btn-wrap button{
-    display: inline-block;
-    font-size: 14px;
-    padding: 8px 10px;
-    box-sizing: border-box;
-    border-radius: 5px;
-}
-
-.todo-wrap > li ul > li .btn-wrap button:first-child{
-    background-color: #ffda98;
-    color: #fff;
-}
-
-.todo-wrap > li ul > li .btn-wrap button:last-child{
-    border: 1px solid #ccc;
-    color: #aaa;
-}
-
 .todo-wrap > li ul > li .btn-wrap button + button{
     margin-left: 10px;
 }
@@ -91,9 +62,35 @@
     width: 100%;
     font-size: 16px;
     padding: 10px 12px;
+    border-radius: 5px;
+}
+
+.btn-type-01.gray{
+    background-color: #ddd;
+    color: #fff;
+}
+
+.btn-type-01.green{
     background-color: #9dd84b;
     color: #fff;
+}
+
+.btn-type-02{
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 10px;
+    box-sizing: border-box;
     border-radius: 5px;
+}
+
+.btn-type-02.yellow{
+    background-color: #ffda98;
+    color: #fff;
+}
+
+.btn-type-02.gray{
+    border: 1px solid #ccc;
+    color: #aaa;
 }
 
 #modal-root .popup-wrap{

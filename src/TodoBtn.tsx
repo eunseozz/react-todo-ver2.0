@@ -7,6 +7,7 @@ interface TodoBtnProps {
   title: string
   value?: string
   id?: number
+  btnStyle: string
 }
 
 const TodoBtn = ({
@@ -15,6 +16,7 @@ const TodoBtn = ({
   title,
   value = '',
   id,
+  btnStyle,
 }: TodoBtnProps) => {
   const [isModalOpen, isOpen] = useState(false)
 
@@ -29,11 +31,11 @@ const TodoBtn = ({
   return (
     <>
       {btnType === '삭제' ? (
-        <button type="button" onClick={() => saveData(id)}>
+        <button type="button" className={btnStyle} onClick={() => saveData(id)}>
           {title}
         </button>
       ) : (
-        <button type="button" onClick={handleOpen}>
+        <button type="button" className={btnStyle} onClick={handleOpen}>
           {title}
         </button>
       )}
