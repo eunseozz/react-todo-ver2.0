@@ -4,14 +4,14 @@ import PortalModal from './PortalModal'
 import SampleModal from './SampleModal'
 
 const TodoAddBtn = () => {
-  const [isModalOpen, isOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleOpen = () => {
-    isOpen(true)
+    setIsModalOpen(true)
   }
 
   const handleClose = () => {
-    isOpen(false)
+    setIsModalOpen(false)
   }
 
   return (
@@ -21,7 +21,7 @@ const TodoAddBtn = () => {
         <PortalModal>
           <SampleModal closePop={handleClose} />
         </PortalModal>
-      )}    
+      )}
     </>
   )
 }
