@@ -23,7 +23,7 @@ const SampleModal = ({ saveData, closePop, title }: Props) => {
             placeholder="내용을 입력해주세요."
           />
           <button
-            type="button"
+            type="submit"
             className="popup-btn"
             onSubmit={() => saveData()}
           >
