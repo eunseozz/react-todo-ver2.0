@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 interface Props {
-  onSubmit(): void
+  onSubmit(title: string): void
 }
 
 const TodoAddForm = ({ onSubmit }: Props) => {
@@ -25,7 +25,7 @@ const TodoAddForm = ({ onSubmit }: Props) => {
         <button
           type="button"
           className="btn-type-01 green"
-          onSubmit={() => onSubmit}
+          onClick={() => onSubmit(inputText)}
         >
           저장
         </button>
