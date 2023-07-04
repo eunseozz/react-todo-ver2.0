@@ -47,7 +47,7 @@ const Todo = () => {
     },
   ])
   const [isAddModalOpen, setIsAddModalOpen] = React.useState(false)
-  const itemId = useRef('7')
+  const itemId = useRef(7)
 
   const handleOnSubmit = (title: string) => {
     let newItem
@@ -56,7 +56,7 @@ const Todo = () => {
     if (beforeAddArray.length > 0) {
       newItem = [
         {
-          id: parseInt(itemId.current),
+          id: itemId.current,
           title: title,
         },
       ]
@@ -80,7 +80,7 @@ const Todo = () => {
           date: getToday(),
           todo: [
             {
-              id: parseInt(itemId.current),
+              id: itemId.current,
               title: title,
             },
           ],
