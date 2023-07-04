@@ -14,7 +14,7 @@ const TodoAddForm = ({ onSubmit }: Props) => {
   return (
     <>
       <h3 className="popup-title">추가하기</h3>
-      <form action="post">
+      <form onSubmit={() => onSubmit(inputText)}>
         <input
           type="text"
           className="popup-input"
@@ -22,11 +22,7 @@ const TodoAddForm = ({ onSubmit }: Props) => {
           value={inputText}
           onChange={(e) => inputTextChange(e)}
         />
-        <button
-          type="button"
-          className="btn-type-01 green"
-          onClick={() => onSubmit(inputText)}
-        >
+        <button type="submit" className="btn-type-01 green">
           저장
         </button>
       </form>
