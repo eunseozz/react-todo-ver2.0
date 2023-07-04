@@ -55,6 +55,17 @@ const TodoList = () => {
     )
   }
 
+  const handleClickUpdateButton = (id: number, title: string) => {
+    setTask((prev) =>
+      prev.map((task) => ({
+        date: task.date,
+        todo: task.todo.map((item) =>
+          item.id === id ? { ...item, title: title } : item
+        ),
+      }))
+    )
+  }
+
   return (
     <ul className="todo-wrap">
       {tasks.map((task) => (
@@ -62,7 +73,7 @@ const TodoList = () => {
           key={task.date}
           date={task.date}
           todo={task.todo}
-          //onClickUpdateButton={handleClickUpdateButton}
+          onClickUpdateButton={handleClickUpdateButton}
           onClickDeleteButton={handleClickDeleteButton}
         />
       ))}

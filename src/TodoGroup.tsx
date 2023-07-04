@@ -2,7 +2,7 @@ import React from 'react'
 import TodoItem from './TodoItem'
 
 interface TodoGroupProps {
-  //onClickUpdateButton(id: number): void;
+  onClickUpdateButton(id: number, title: string): void
   onClickDeleteButton(id: number): void
   date: string
   todo: Array<ItemObj>
@@ -14,7 +14,7 @@ interface ItemObj {
 }
 
 const TodoGroup = ({
-  //onClickUpdateButton,
+  onClickUpdateButton,
   onClickDeleteButton,
   date,
   todo,
@@ -31,6 +31,7 @@ const TodoGroup = ({
             id={item.id}
             title={item.title}
             onClickDeleteButton={onClickDeleteButton}
+            onClickUpdateButton={onClickUpdateButton}
           />
         ))}
       </ul>

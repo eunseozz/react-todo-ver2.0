@@ -1,15 +1,23 @@
 import React, { useState } from 'react'
+import Button from './Button'
 
 interface Props {
+  id: number
   title: string
-  onSubmit(): void
+  onSubmit(id: number, title: string): void
+  onClose(): void
 }
 
-const TodoUpdateForm = ({ title, onSubmit }: Props) => {
+const TodoUpdateForm = ({ id, title, onSubmit, onClose }: Props) => {
   const [inputText, setInputText] = useState(title)
 
   const inputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
+  }
+
+  const onAction = () => {
+    onClose()
+    onSubmit(id, inputText)
   }
 
   return (
@@ -23,13 +31,9 @@ const TodoUpdateForm = ({ title, onSubmit }: Props) => {
           value={inputText}
           onChange={(e) => inputTextChange(e)}
         />
-        <button
-          type="button"
-          className="btn-type-01 green"
-          onSubmit={() => onSubmit}
-        >
+        <Button variants="update-save" onClick={() => onAction()}>
           저장
-        </button>
+        </Button>
       </form>
     </>
   )
