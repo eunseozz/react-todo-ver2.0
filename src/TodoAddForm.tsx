@@ -5,7 +5,7 @@ interface Props {
   onSubmit(title: string): void
 }
 
-interface IFormData {
+interface newObj {
   title: string
 }
 
@@ -14,7 +14,7 @@ const TodoAddForm = ({ onSubmit }: Props) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormData>()
+  } = useForm<newObj>()
 
   const onAction = (data: any) => {
     onSubmit(data.title)
