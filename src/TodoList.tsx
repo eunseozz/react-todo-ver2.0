@@ -2,11 +2,11 @@ import React from 'react'
 import TodoGroup from './TodoGroup'
 
 interface Props {
-  tasks: Array<groupObj>
-  setTask: React.Dispatch<React.SetStateAction<Array<groupObj>>>
+  tasks: Array<GroupObj>
+  setTask: React.Dispatch<React.SetStateAction<Array<GroupObj>>>
 }
 
-interface groupObj {
+interface GroupObj {
   date: string
   todo: Array<ItemObj>
 }
