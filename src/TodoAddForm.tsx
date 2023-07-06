@@ -1,32 +1,42 @@
 import React, { useState } from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 interface Props {
-  onSubmit(): void
+  onSubmit(title: string): void
+}
+
+interface newObj {
+  title: string
 }
 
 const TodoAddForm = ({ onSubmit }: Props) => {
-  const [inputText, setInputText] = useState('')
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<newObj>()
 
-  const inputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(e.target.value)
+  const onAction = (data: any) => {
+    onSubmit(data.title)
   }
 
   return (
     <>
       <h3 className="popup-title">추가하기</h3>
-      <form action="post">
+      <form onSubmit={handleSubmit(onAction)}>
         <input
-          type="text"
           className="popup-input"
-          placeholder="내용을 입력해주세요."
-          value={inputText}
-          onChange={(e) => inputTextChange(e)}
+          {...register('title', {
+            required: '내용을 입력해주세요',
+            minLength: {
+              value: 10,
+              message: '10자이상 입력해주세요',
+            },
+          })}
+          placeholder="내용"
         />
-        <button
-          type="button"
-          className="btn-type-01 green"
-          onSubmit={() => onSubmit}
-        >
+        <span className="error-msg">{errors?.title?.message}</span>
+        <button type="submit" className="btn-type-01 green">
           저장
         </button>
       </form>

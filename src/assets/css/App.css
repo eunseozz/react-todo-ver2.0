@@ -1,149 +1,153 @@
 @import './reset.css';
-.inner{
-    padding: 50px 20px 50px 20px;
-    max-width: 768px;
-    margin: 0 auto;
-    box-sizing: border-box;
+.inner {
+  padding: 50px 20px 50px 20px;
+  max-width: 768px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.todo-wrap{
-    margin-top: 50px;
+.todo-wrap {
+  margin-top: 50px;
 }
 
-.todo-wrap > li + li{
-    margin-top: 50px;
+.todo-wrap > li + li {
+  margin-top: 50px;
 }
 
-.todo-wrap > li > p{
-    position: relative;
-    text-align: center;   
+.todo-wrap > li > p {
+  position: relative;
+  text-align: center;
 }
 
-.todo-wrap > li > p > span{
-    display: inline-block;
-    padding-left: 15px;
-    padding-right: 15px;
-    background-color: #fff;
-    font-weight: 500;
+.todo-wrap > li > p > span {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #fff;
+  font-weight: 500;
 }
 
-.todo-wrap > li > p:after{
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: #ddd;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: -1;
+.todo-wrap > li > p:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
 }
 
-.todo-wrap > li ul{
-    margin-top: 20px;
+.todo-wrap > li ul {
+  margin-top: 20px;
 }
 
-.todo-wrap > li ul > li{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.todo-wrap > li ul > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.todo-wrap > li ul > li + li{
-    margin-top: 10px;
+.todo-wrap > li ul > li + li {
+  margin-top: 10px;
 }
 
-.todo-wrap > li ul > li .btn-wrap button + button{
-    margin-left: 10px;
+.todo-wrap > li ul > li .btn-wrap button + button {
+  margin-left: 10px;
 }
 
-.btn-type-01{
-    display: block;
-    width: 100%;
-    font-size: 16px;
-    padding: 10px 12px;
-    border-radius: 5px;
+.btn-type-01 {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 12px;
+  border-radius: 5px;
 }
 
-.btn-type-01.gray{
-    background-color: #ddd;
-    color: #fff;
+.btn-type-01.gray {
+  background-color: #ddd;
+  color: #fff;
 }
 
-.btn-type-01.green{
-    background-color: #9dd84b;
-    color: #fff;
+.btn-type-01.green {
+  background-color: #9dd84b;
+  color: #fff;
 }
 
-.btn-type-02{
-    display: inline-block;
-    font-size: 14px;
-    padding: 8px 10px;
-    box-sizing: border-box;
-    border-radius: 5px;
+.btn-type-02 {
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
-.btn-type-02.yellow{
-    background-color: #ffda98;
-    color: #fff;
+.btn-type-02.yellow {
+  background-color: #ffda98;
+  color: #fff;
 }
 
-.btn-type-02.gray{
-    border: 1px solid #ccc;
-    color: #aaa;
+.btn-type-02.gray {
+  border: 1px solid #ccc;
+  color: #aaa;
 }
 
-#modal-root .popup-wrap{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 30px;
-    box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 10px;
-    z-index: 9;
+#modal-root .popup-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 9;
 }
 
-#modal-root .popup-close{
-    text-indent: -9999px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 20px;
-    height: 20px;
-    background: url(../img/ico_close.svg) no-repeat center;
-    background-size: 100%;
+#modal-root .popup-close {
+  text-indent: -9999px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/ico_close.svg) no-repeat center;
+  background-size: 100%;
 }
 
-#modal-root .popup-title{
-    font-weight: 700;
-    font-size: 20px;
+#modal-root .popup-title {
+  font-weight: 700;
+  font-size: 20px;
 }
 
-#modal-root .popup-input{
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    font-size: 16px;
-    border-bottom: 1px solid #ddd;
-    padding-top: 10px;
-    padding-bottom: 10px;
+#modal-root .popup-input {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-#modal-root .btn-type-01{
-    margin-top: 20px;
-
+#modal-root .btn-type-01 {
+  margin-top: 20px;
 }
 
-#modal-root .popup-dimd{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    background-color: #000;
-    opacity: .5;
-    z-index: 8;
+#modal-root .popup-dimd {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 8;
+}
+
+form .error-msg {
+  font-size: 14px;
+  color: red;
 }

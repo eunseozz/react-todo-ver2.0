@@ -1,49 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import TodoGroup from './TodoGroup'
 
-const TodoList = () => {
-  const [tasks, setTask] = useState([
-    {
-      date: '2023.03.07',
-      todo: [
-        {
-          id: 1,
-          title: '밥먹기',
-        },
-        {
-          id: 2,
-          title: '운동하기',
-        },
-      ],
-    },
-    {
-      date: '2023.03.06',
-      todo: [
-        {
-          id: 3,
-          title: '친구만나기',
-        },
-      ],
-    },
-    {
-      date: '2023.03.05',
-      todo: [
-        {
-          id: 4,
-          title: '공부하기',
-        },
-        {
-          id: 5,
-          title: '식단짜기',
-        },
-        {
-          id: 6,
-          title: '여행가기',
-        },
-      ],
-    },
-  ])
+interface Props {
+  tasks: Array<GroupObj>
+  setTask: React.Dispatch<React.SetStateAction<Array<GroupObj>>>
+}
 
+interface GroupObj {
+  date: string
+  todo: Array<ItemObj>
+}
+
+interface ItemObj {
+  id: number
+  title: string
+}
+
+const TodoList = ({ tasks, setTask }: Props) => {
   const handleClickDeleteButton = (id: number) => {
     setTask((prev) =>
       prev
