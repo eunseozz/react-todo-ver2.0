@@ -47,9 +47,9 @@ const TodoList = () => {
   const handleClickDeleteButton = (id: number) => {
     setTask((prev) =>
       prev
-        .map((task) => ({
-          date: task.date,
-          todo: task.todo.filter((item) => item.id !== id),
+        .map(({ date, todo }) => ({
+          date,
+          todo: todo.filter((item) => item.id !== id),
         }))
         .filter((item) => item.todo.length !== 0)
     )
@@ -57,9 +57,9 @@ const TodoList = () => {
 
   const handleClickUpdateButton = (id: number, title: string) => {
     setTask((prev) =>
-      prev.map((task) => ({
-        date: task.date,
-        todo: task.todo.map((item) =>
+      prev.map(({ date, todo }) => ({
+        date,
+        todo: todo.map((item) =>
           item.id === id ? { ...item, title: title } : item
         ),
       }))
