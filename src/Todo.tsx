@@ -46,10 +46,21 @@ const initialTasks = [
   },
 ]
 
+const getToday = () => {
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = ('0' + (1 + date.getMonth())).slice(-2)
+  const day = ('0' + date.getDate()).slice(-2)
+
+  return year + '.' + month + '.' + day
+}
+
 const Todo = () => {
   const [tasks, setTask] = useState(initialTasks)
   const [isAddModalOpen, setIsAddModalOpen] = React.useState(false)
   const itemId = useRef(7)
+
+  const isLastItemToday = tasks[0].date === getToday()
 
   const handleOnSubmit = (title: string) => {
     const todayNewItem = {
@@ -57,29 +68,19 @@ const Todo = () => {
       title: title,
     }
 
-    const todayAllItems =
-      tasks[0].date === getToday()
-        ? [{ ...tasks[0], todo: [...tasks[0].todo, todayNewItem] }]
-        : [
-            {
-              date: getToday(),
-              todo: [todayNewItem],
-            },
-          ]
+    const todayAllItems = isLastItemToday
+      ? [{ ...tasks[0], todo: [...tasks[0].todo, todayNewItem] }]
+      : [
+          {
+            date: getToday(),
+            todo: [todayNewItem],
+          },
+        ]
 
-    setTask([...todayAllItems, ...tasks.slice(1)])
+    setTask([...todayAllItems, ...(isLastItemToday ? tasks.slice(1) : tasks)])
 
     itemId.current += 1
     setIsAddModalOpen(false)
-  }
-
-  const getToday = () => {
-    const date = new Date()
-    const year = date.getFullYear()
-    const month = ('0' + (1 + date.getMonth())).slice(-2)
-    const day = ('0' + date.getDate()).slice(-2)
-
-    return year + '.' + month + '.' + day
   }
 
   return (
