@@ -5,15 +5,18 @@ import TodoUpdateForm from './TodoUpdateForm'
 
 interface TodoItemProps {
   onClickDeleteButton(id: number): void
+  onClickUpdateButton(id: number, title: string): void
   id: number
   title: string
 }
 
-const TodoItem = ({ onClickDeleteButton, id, title }: TodoItemProps) => {
+const TodoItem = ({
+  onClickDeleteButton,
+  onClickUpdateButton,
+  id,
+  title,
+}: TodoItemProps) => {
   const [isUpdateModalOpen, setIsUpdateModalOpen] = React.useState(false)
-
-  const handleOnSubmit = () => {}
-
   return (
     <>
       <li>
@@ -34,7 +37,12 @@ const TodoItem = ({ onClickDeleteButton, id, title }: TodoItemProps) => {
       </li>
       {isUpdateModalOpen && (
         <SampleModal onClose={() => setIsUpdateModalOpen(false)}>
-          <TodoUpdateForm title={title} onSubmit={handleOnSubmit} />
+          <TodoUpdateForm
+            id={id}
+            title={title}
+            onSubmit={onClickUpdateButton}
+            onClose={() => setIsUpdateModalOpen(false)}
+          />
         </SampleModal>
       )}
     </>

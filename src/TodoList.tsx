@@ -47,11 +47,22 @@ const TodoList = () => {
   const handleClickDeleteButton = (id: number) => {
     setTask((prev) =>
       prev
-        .map((task) => ({
-          date: task.date,
-          todo: task.todo.filter((item) => item.id !== id),
+        .map(({ date, todo }) => ({
+          date,
+          todo: todo.filter((item) => item.id !== id),
         }))
         .filter((item) => item.todo.length !== 0)
+    )
+  }
+
+  const handleClickUpdateButton = (id: number, title: string) => {
+    setTask((prev) =>
+      prev.map(({ date, todo }) => ({
+        date,
+        todo: todo.map((item) =>
+          item.id === id ? { ...item, title: title } : item
+        ),
+      }))
     )
   }
 
@@ -62,7 +73,7 @@ const TodoList = () => {
           key={task.date}
           date={task.date}
           todo={task.todo}
-          //onClickUpdateButton={handleClickUpdateButton}
+          onClickUpdateButton={handleClickUpdateButton}
           onClickDeleteButton={handleClickDeleteButton}
         />
       ))}

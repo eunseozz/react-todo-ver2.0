@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface Props {
-  variants: 'add' | 'update' | 'delete'
+  variants: 'add' | 'update' | 'update-save' | 'delete'
   onClick?: React.MouseEventHandler
   className?: string
 }
@@ -20,6 +20,8 @@ const Button = ({
         return 'btn-type-01 gray'
       case 'update':
         return 'btn-type-02 yellow'
+      case 'update-save':
+        return 'btn-type-01 green'
       case 'delete':
         return 'btn-type-02 gray'
     }
@@ -29,6 +31,7 @@ const Button = ({
     <button
       className={clsx([buttonStyle(), className ?? ''])}
       onClick={onClick}
+      type="button"
     >
       {children}
     </button>
