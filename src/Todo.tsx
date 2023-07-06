@@ -52,44 +52,22 @@ const Todo = () => {
   const itemId = useRef(7)
 
   const handleOnSubmit = (title: string) => {
-    let newItem
-    const beforeAddArray = tasks.filter((task) => task.date === getToday())
-
-    if (beforeAddArray.length > 0) {
-      newItem = [
-        {
-          id: itemId.current,
-          title: title,
-        },
-      ]
-      const newObj = [...newItem, ...beforeAddArray[0].todo]
-      setTask((prev) =>
-        prev.map((task) =>
-          task.date === getToday()
-            ? {
-                date: task.date,
-                todo: newObj,
-              }
-            : {
-                date: task.date,
-                todo: task.todo,
-              }
-        )
-      )
-    } else {
-      newItem = [
-        {
-          date: getToday(),
-          todo: [
-            {
-              id: itemId.current,
-              title: title,
-            },
-          ],
-        },
-      ]
-      setTask([...newItem, ...tasks])
+    const todayNewItem = {
+      id: itemId.current,
+      title: title,
     }
+
+    const todayAllItems =
+      tasks[0].date === getToday()
+        ? [{ ...tasks[0], todo: [...tasks[0].todo, todayNewItem] }]
+        : [
+            {
+              date: getToday(),
+              todo: [todayNewItem],
+            },
+          ]
+
+    setTask([...todayAllItems, ...tasks.slice(1)])
 
     itemId.current += 1
     setIsAddModalOpen(false)
