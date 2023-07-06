@@ -31,7 +31,7 @@ const TodoUpdateForm = ({ id, title, onSubmit, onClose }: Props) => {
           value={inputText}
           onChange={(e) => inputTextChange(e)}
         />
-        <Button variants="update-save" onClick={() => onAction()}>
+        <Button variants="update-save" onClick={onAction}>
           저장
         </Button>
       </form>
