@@ -60,9 +60,9 @@ const Todo = () => {
   const [isAddModalOpen, setIsAddModalOpen] = React.useState(false)
   const itemId = useRef(7)
 
-  const isLastItemToday = tasks[0].date === getToday()
-
   const handleOnSubmit = (title: string) => {
+    const isLastItemToday = tasks[0].date === getToday()
+
     const todayNewItem = {
       id: itemId.current,
       title: title,
